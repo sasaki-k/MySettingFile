@@ -36,9 +36,10 @@
 	))
 
 ;; auto-complete & gnu global
-(require 'auto-complete)
-(require 'auto-complete-config)   
-(global-auto-complete-mode t)
+;; GNU Globalを使うならコメントを取る
+;; (require 'auto-complete)
+;; (require 'auto-complete-config)   
+;; (global-auto-complete-mode t)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
