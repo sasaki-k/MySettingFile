@@ -17,7 +17,7 @@ SAVEHIST=1000000
 # 1行表示
 # PROMPT="%~ %# "
 # 2行表示
-PROMPT="%{${fg[red]}%}[%n@%m]%{${reset_color}%} %~ 
+PROMPT="%{${fg[green]}%}[%n@%m]%{${reset_color}%} %~ 
 %# " 
  
 # 単語の区切り文字を指定する
@@ -122,11 +122,9 @@ bindkey "^P" history-beginning-search-backward-end
 bindkey "^N" history-beginning-search-forward-end
  
 ########################################
-# エイリアス
-# gcc g++周り (状況に応じて)
-# alias gcc='llvm-gcc'
-# alias g++='llvm-g++'
- 
+
+# alias
+alias ls='ls --color' 
 alias la='ls -a'
 alias ll='ls -l'
  
@@ -164,6 +162,11 @@ export CLICOLOR=1
 alias ls='ls -G -F'
 ;;
 linux*)
+PROMPT="%F{green}%n@%m%f(`ip netns id`)%f %~ 
+%# " 
+function ChangeNS(){
+    sudo ip netns exec $1 su `echo $USER`
+}
 #Linux用の設定
 ;;
 esac
